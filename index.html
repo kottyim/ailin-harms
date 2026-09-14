@@ -1,22 +1,874 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ailin Harms | English & Spanish Teacher</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;background:#FAF8F3;color:#2F3A36;line-height:1.6}a{text-decoration:none;color:inherit}.container{width:min(1100px,92%);margin:auto}header{position:sticky;top:0;background:#faf8f3ee;backdrop-filter:blur(10px);border-bottom:1px solid #ece8df}nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}.logo h1{font-family:Playfair Display,serif;color:#23463D;font-size:2rem}.logo span{font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:#64736e}.menu{display:flex;gap:30px}.hero{padding:60px 0}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.hero h2{font-family:Playfair Display,serif;font-size:4rem;line-height:1;color:#23463D;margin-bottom:20px}.hero p{color:#5b6763;margin-bottom:25px;font-size:1.08rem}.btn{display:inline-block;background:#2F6B5B;color:#fff;padding:14px 24px;border-radius:10px;font-weight:600}.section{padding:70px 0}.title{font-family:Playfair Display,serif;font-size:2.4rem;color:#23463D;margin-bottom:20px}.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.cards{display:grid;grid-template-columns:1fr 1fr;gap:25px}.card{background:#fff;border:1px solid #e7e2d8;border-radius:18px;overflow:hidden}.card h3{font-family:Playfair Display,serif;color:#23463D;margin-bottom:10px}.card .content{padding:20px}.card ul{padding-left:18px;color:#56635e}.banner{background:#E8EFEA;color:#2F6B5B;padding:16px;border-radius:12px;text-align:center;font-weight:600;margin-top:25px}.prices{display:grid;grid-template-columns:1fr 1fr;gap:30px}.price{background:#fff;border:1px solid #e7e2d8;border-radius:18px;padding:35px;text-align:center}.price.featured{border:2px solid #2F6B5B}.price h3{font-family:Playfair Display,serif;font-size:3rem;color:#23463D}.contact{background:#1F5A4C;color:#fff;border-radius:24px;padding:45px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:30px}.email{background:#fff;color:#23463D;padding:14px 22px;border-radius:10px;font-weight:600}.footer{text-align:center;padding:25px;color:#6c7873;font-size:.9rem}svg{width:100%;display:block}@media(max-width:768px){.menu{display:none}.hero-grid,.about,.cards,.prices,.contact{grid-template-columns:1fr}.hero h2{font-size:2.8rem}.contact{text-align:center}.title{font-size:2rem}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ailin Harms | English & Spanish Teacher</title>
+
+  <meta
+    name="description"
+    content="Personalised English and Spanish lessons with Ailin Harms, a CELTA-qualified language teacher."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+      color: #292929;
+      background: #faf9f7;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #ece8e3;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.6;
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    section {
+      padding: 90px 24px;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: #776f68;
+      margin-bottom: 14px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.15;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      max-width: 650px;
+      color: #66615d;
+      font-size: 1.05rem;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding: 70px 24px 90px;
+      background: #f2eee9;
+    }
+
+    .hero-grid {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 5.2rem);
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      display: block;
+    }
+
+    .hero-description {
+      font-size: 1.15rem;
+      color: #625d58;
+      max-width: 550px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .button-primary {
+      background: #292929;
+      color: #ffffff;
+    }
+
+    .button-secondary {
+      border: 1px solid #292929;
+      color: #292929;
+      background: transparent;
+    }
+
+    .hero-image {
+      height: 520px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .hero-image img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      background: #ffffff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-image {
+      height: 500px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .about-image img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+      color: #5f5a56;
+      font-size: 1.05rem;
+    }
+
+    .qualification {
+      margin-top: 28px;
+      padding: 18px 20px;
+      border-left: 3px solid #292929;
+      background: #f7f5f2;
+      font-weight: 600;
+    }
+
+    /* =========================
+       LESSONS
+    ========================= */
+
+    .lessons {
+      background: #faf9f7;
+    }
+
+    .lesson-grid {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .lesson-card {
+      background: #ffffff;
+      padding: 34px;
+      border: 1px solid #e9e5e0;
+      border-radius: 8px;
+    }
+
+    .lesson-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .lesson-card ul {
+      list-style: none;
+    }
+
+    .lesson-card li {
+      padding: 9px 0;
+      color: #625d58;
+      border-bottom: 1px solid #eeeae6;
+    }
+
+    .lesson-card li:last-child {
+      border-bottom: none;
+    }
+
+    /* =========================
+       PERSONALISED
+    ========================= */
+
+    .personalised {
+      background: #292929;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .personalised .container {
+      max-width: 800px;
+    }
+
+    .personalised h2 {
+      margin-bottom: 20px;
+    }
+
+    .personalised p {
+      color: #dedbd8;
+      font-size: 1.1rem;
+    }
+
+    /* =========================
+       PRICES
+    ========================= */
+
+    .prices {
+      background: #ffffff;
+    }
+
+    .price-grid {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 800px;
+    }
+
+    .price-card {
+      border: 1px solid #e5e0db;
+      border-radius: 8px;
+      padding: 34px;
+      background: #faf9f7;
+    }
+
+    .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 5px;
+    }
+
+    .price-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .price-card p {
+      color: #6a6560;
+    }
+
+    .package-note {
+      margin-top: 28px;
+      color: #625d58;
+      font-size: 0.98rem;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      background: #f2eee9;
+      text-align: center;
+    }
+
+    .contact .container {
+      max-width: 720px;
+    }
+
+    .contact p {
+      color: #625d58;
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+    }
+
+    .email {
+      display: inline-block;
+      font-size: 1.15rem;
+      font-weight: 600;
+      border-bottom: 1px solid #292929;
+      padding-bottom: 3px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #ece8e3;
+      padding: 28px 24px;
+      text-align: center;
+      color: #77716c;
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .nav {
+        padding: 16px 20px;
+      }
+
+      .nav-links {
+        gap: 14px;
+        font-size: 0.85rem;
+      }
+
+      section {
+        padding: 70px 20px;
+      }
+
+      .hero {
+        padding: 55px 20px 70px;
+      }
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 14vw, 4.5rem);
+      }
+
+      .hero-image {
+        height: 380px;
+      }
+
+      .about-image {
+        height: 380px;
+      }
+
+      .lesson-grid,
+      .price-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .logo {
+        font-size: 1.05rem;
+      }
+
+      .nav-links {
+        gap: 10px;
+        font-size: 0.78rem;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-description {
+        font-size: 1.05rem;
+      }
+
+      .hero-image,
+      .about-image {
+        height: 320px;
+      }
+
+      .lesson-card,
+      .price-card {
+        padding: 26px;
+      }
+
+      .button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header><div class="container"><nav><div class="logo"><h1>Ailin Harms</h1><span>CELTA Qualified Language Teacher</span></div><div class="menu"><a href="#about">About</a><a href="#teach">What I Teach</a><a href="#prices">Prices</a><a href="#contact">Contact</a></div></nav></div></header>
-<section class="hero"><div class="container hero-grid"><div><p style="letter-spacing:3px;color:#64736e;font-size:.8rem;margin-bottom:12px">ONLINE LESSONS · ENGLISH & SPANISH</p><h2>Learn a language.<br>Open new doors.</h2><p>Personalised online lessons in English and Spanish, focused on your goals, your level and your learning style.</p><a href="#contact" class="btn">Get in touch</a><p style="margin-top:18px;color:#60706A;font-size:.95rem">Every lesson is personalised and focused on you.</p></div><div><svg viewBox="0 0 520 360" xmlns="http://www.w3.org/2000/svg"><rect width="520" height="360" rx="28" fill="#EFE9DC"/><rect y="250" width="520" height="110" fill="#DDBA8A" opacity=".35"/><rect x="190" y="140" width="140" height="30" rx="4" fill="#1F5A4C"/><rect x="200" y="110" width="130" height="30" rx="4" fill="#C96C43"/><rect x="210" y="80" width="120" height="30" rx="4" fill="#275B4E"/><text x="225" y="99" fill="#fff" font-size="10" font-family="Arial">English Grammar</text><text x="218" y="129" fill="#fff" font-size="10" font-family="Arial">Spanish</text><circle cx="390" cy="95" r="34" fill="#D8E5DE"/><path d="M390 60v70M360 95h60" stroke="#7A9B90" stroke-linecap="round"/><rect x="350" y="130" width="70" height="85" rx="8" fill="#F7F4EE"/><path d="M365 150h40M365 165h28M365 180h34" stroke="#8BA39A" stroke-linecap="round"/><circle cx="410" cy="210" r="24" fill="#E6D7C8"/><path d="M392 210h36" stroke="#B8895D" stroke-linecap="round"/></svg></div></div></section>
-<section id="about" class="section"><div class="container about"><div><h2 class="title">About Me</h2><p>Hi! I'm <strong>Ailin Harms</strong>, a CELTA-qualified language teacher based in Liverpool.</p><br><p>As a native Spanish speaker and experienced English teacher, I offer personalised online lessons in both English and Spanish.</p><br><p>My classes are friendly, practical and tailored to every student. Whether your goal is improving everyday communication, travelling or simply becoming more confident, each lesson is designed around you.</p></div><div><svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg"><rect width="420" height="300" rx="24" fill="#F4F1EA"/><rect x="40" y="170" width="120" height="22" rx="4" fill="#2F6B5B"/><rect x="50" y="145" width="110" height="22" rx="4" fill="#C58A58"/><rect x="60" y="120" width="100" height="22" rx="4" fill="#295B4D"/><circle cx="275" cy="85" r="30" fill="#D9E5DE"/><path d="M275 55v60M245 85h60" stroke="#7FA094"/><path d="M260 130c-18 24-18 55 0 80" stroke="#6F9287" stroke-linecap="round"/><path d="M290 130c18 24 18 55 0 80" stroke="#6F9287" stroke-linecap="round"/><rect x="245" y="195" width="60" height="18" rx="9" fill="#E6D7C8"/></svg></div></div></section>
-<section id="teach" class="section"><div class="container"><h2 class="title">English & Spanish</h2><div class="cards"><div class="card"><svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg"><rect width="320" height="180" fill="#EFE9DC"/><rect x="50" y="30" width="220" height="120" rx="10" fill="#fff"/><path d="M70 55h180M70 75h140M70 95h165M70 115h100" stroke="#8BA39A" stroke-linecap="round"/><circle cx="250" cy="130" r="12" fill="#D9E5DE"/></svg><div class="content"><h3>English</h3><ul><li>General English</li><li>Conversation</li><li>Grammar, vocabulary & pronunciation</li><li>And more</li></ul></div></div><div class="card"><svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg"><rect width="320" height="180" fill="#E7EEE9"/><path d="M90 30h140v120H90z" fill="#D8E5DE"/><path d="M160 30v120" stroke="#7FA094"/><path d="M90 90h140" stroke="#7FA094" opacity=".5"/><circle cx="160" cy="90" r="24" fill="#2F6B5B" opacity=".15"/><path d="M150 90h20M160 80v20" stroke="#2F6B5B"/></svg><div class="content"><h3>Spanish</h3><ul><li>Conversation classes</li><li>Travel Spanish</li><li>Vocabulary & pronunciation</li><li>And more</li></ul></div></div></div><div class="banner">Whatever your level or goal, every class is tailored to you.</div></div></section>
-<section id="prices" class="section"><div class="container"><h2 class="title">Simple and transparent</h2><div class="prices"><div class="price featured"><h3>£22</h3><strong>1 hour lesson</strong><p style="margin-top:15px">Flexible, personalised and adapted to your level.</p></div><div class="price"><h3>£100</h3><strong>5-hour package</strong><p style="margin-top:15px">Save money while building consistent progress.</p></div></div><div class="banner">Need more hours? Contact me for special package prices.</div></div></section>
-<section id="contact" class="section"><div class="container"><div class="contact"><div><h2 style="font-family:Playfair Display,serif;font-size:2.3rem;margin-bottom:10px">Let's start your language journey!</h2><p>Send me an email and let's talk about your goals.</p><p style="margin-top:8px;font-size:.9rem;color:#d8e6df">Liverpool · Online lessons</p></div><a href="mailto:ailin_harms@outlook.com" class="email">✉ ailin_harms@outlook.com</a></div></div></section>
-<div class="footer">© 2026 Ailin Harms · English & Spanish Teacher</div>
-</body></html>
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <header>
+    <nav class="nav">
+
+      <a href="#top" class="logo">
+        Ailin Harms
+      </a>
+
+      <ul class="nav-links">
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#lessons">Lessons</a>
+        </li>
+
+        <li>
+          <a href="#prices">Prices</a>
+        </li>
+
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+
+    </nav>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <main id="top">
+
+    <section class="hero">
+
+      <div class="hero-grid">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            Language Teacher
+          </div>
+
+          <h1>
+            Learn with
+            <span>Ailin.</span>
+          </h1>
+
+          <p class="hero-description">
+            Personalised English and Spanish lessons designed around
+            your goals, your interests and your way of learning.
+          </p>
+
+          <div class="buttons">
+
+            <a
+              href="mailto:ailin_harms@outlook.com"
+              class="button button-primary"
+            >
+              Get in touch
+            </a>
+
+            <a
+              href="#lessons"
+              class="button button-secondary"
+            >
+              Explore lessons
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- REAL PHOTO — NO SVG -->
+
+        <div class="hero-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1768219565623-501f93ae384b?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1600"
+            alt="Laptop, notebook and coffee on a desk"
+            loading="eager"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="about" id="about">
+
+      <div class="container about-grid">
+
+        <!-- REAL PHOTO — NO SVG -->
+
+        <div class="about-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1724166595400-fdfcdb29685e?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1600"
+            alt="A stack of books on a desk"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="about-text">
+
+          <div class="eyebrow">
+            About me
+          </div>
+
+          <h2>
+            Hello, I'm Ailin.
+          </h2>
+
+          <p>
+            I'm a CELTA-qualified language teacher based in Liverpool
+            with experience helping students develop their confidence
+            and communication skills.
+          </p>
+
+          <p>
+            I teach both English and Spanish, with lessons adapted to
+            each student's needs, interests and level.
+          </p>
+
+          <p>
+            Whether you want to improve your everyday communication,
+            practise speaking or develop your language skills, we can
+            build the lessons around you.
+          </p>
+
+          <div class="qualification">
+            CELTA-qualified Language Teacher
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         LESSONS
+    ========================= -->
+
+    <section class="lessons" id="lessons">
+
+      <div class="container">
+
+        <div class="eyebrow">
+          What I teach
+        </div>
+
+        <h2>
+          Lessons designed for you.
+        </h2>
+
+        <p class="section-intro">
+          Every lesson is personalised and focused on you.
+          We can adapt the content and pace to what you want
+          to achieve.
+        </p>
+
+
+        <div class="lesson-grid">
+
+          <!-- ENGLISH -->
+
+          <article class="lesson-card">
+
+            <h3>
+              English
+            </h3>
+
+            <ul>
+
+              <li>
+                General English
+              </li>
+
+              <li>
+                Conversation
+              </li>
+
+              <li>
+                Grammar, vocabulary & pronunciation
+              </li>
+
+              <li>
+                And more
+              </li>
+
+            </ul>
+
+          </article>
+
+
+          <!-- SPANISH -->
+
+          <article class="lesson-card">
+
+            <h3>
+              Spanish
+            </h3>
+
+            <ul>
+
+              <li>
+                Conversation classes
+              </li>
+
+              <li>
+                Travel Spanish
+              </li>
+
+              <li>
+                Vocabulary & pronunciation
+              </li>
+
+              <li>
+                And more
+              </li>
+
+            </ul>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PERSONALISED MESSAGE
+    ========================= -->
+
+    <section class="personalised">
+
+      <div class="container">
+
+        <div class="eyebrow">
+          Your lessons, your way
+        </div>
+
+        <h2>
+          Every lesson is personalised and focused on you.
+        </h2>
+
+        <p>
+          Tell me what you would like to work on and we can create
+          lessons that fit your needs, interests and goals.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRICES
+    ========================= -->
+
+    <section class="prices" id="prices">
+
+      <div class="container">
+
+        <div class="eyebrow">
+          Prices
+        </div>
+
+        <h2>
+          Simple, flexible pricing.
+        </h2>
+
+        <p class="section-intro">
+          Choose a single lesson or a five-hour package.
+        </p>
+
+
+        <div class="price-grid">
+
+          <!-- ONE HOUR -->
+
+          <div class="price-card">
+
+            <div class="price">
+              £22
+            </div>
+
+            <h3>
+              One hour
+            </h3>
+
+            <p>
+              A personalised one-hour lesson.
+            </p>
+
+          </div>
+
+
+          <!-- FIVE HOURS -->
+
+          <div class="price-card">
+
+            <div class="price">
+              £100
+            </div>
+
+            <h3>
+              5 hours
+            </h3>
+
+            <p>
+              Five personalised hours of lessons.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <p class="package-note">
+          Need more hours? Contact me for special package prices.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section class="contact" id="contact">
+
+      <div class="container">
+
+        <div class="eyebrow">
+          Get in touch
+        </div>
+
+        <h2>
+          Let's talk about your lessons.
+        </h2>
+
+        <p>
+          If you have any questions or would like to discuss
+          what you're looking for, feel free to get in touch.
+        </p>
+
+        <a
+          href="mailto:ailin_harms@outlook.com"
+          class="email"
+        >
+          ailin_harms@outlook.com
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <p>
+      © 2026 Ailin Harms. All rights reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
