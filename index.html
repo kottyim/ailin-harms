@@ -12,6 +12,11 @@
   >
 
   <style>
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -23,16 +28,18 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Helvetica, Arial, sans-serif;
-      color: #292929;
-      background: #faf9f7;
-      line-height: 1.6;
-    }
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
 
-    a {
-      color: inherit;
-      text-decoration: none;
+      background: #f7f5ed;
+      color: #26352b;
+      line-height: 1.6;
     }
 
     img {
@@ -40,299 +47,628 @@
       width: 100%;
     }
 
-    /* =========================
-       NAVIGATION
-    ========================= */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =====================================================
+       COLOURS
+    ===================================================== */
+
+    :root {
+      --green-dark: #214332;
+      --green: #3f6b4d;
+      --green-light: #dce8d7;
+      --green-pale: #edf3e9;
+      --cream: #f7f5ed;
+      --cream-dark: #ebe8dc;
+      --white: #ffffff;
+      --text: #26352b;
+      --muted: #68736a;
+      --accent: #c58c5b;
+    }
+
+
+    /* =====================================================
+       DECORATIVE BOTANICAL LEAVES
+       CSS only — no SVGs
+    ===================================================== */
+
+    .leaf-decoration {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.18;
+    }
+
+    .leaf {
+      width: 28px;
+      height: 55px;
+      background: var(--green);
+      border-radius: 100% 0 100% 0;
+      transform: rotate(35deg);
+      position: absolute;
+    }
+
+    .leaf::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 48px;
+      background: var(--green-dark);
+      left: 13px;
+      top: 5px;
+      transform: rotate(-35deg);
+      transform-origin: bottom;
+    }
+
+    .leaf-one {
+      top: 20px;
+      right: 65px;
+      transform: rotate(45deg);
+    }
+
+    .leaf-two {
+      top: 75px;
+      right: 25px;
+      transform: rotate(105deg) scale(0.75);
+    }
+
+    .leaf-three {
+      top: 110px;
+      right: 90px;
+      transform: rotate(10deg) scale(0.6);
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #ece8e3;
+      background: rgba(247, 245, 237, 0.96);
+      border-bottom: 1px solid #dfe4da;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
     }
 
     .nav {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 18px 24px;
+      max-width: 1150px;
+      margin: auto;
+      padding: 17px 25px;
+
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      align-items: center;
+      gap: 25px;
     }
 
     .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: -0.3px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+
+    .logo span {
+      color: var(--green);
+      font-style: italic;
     }
 
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 28px;
       list-style: none;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--green-dark);
     }
 
     .nav-links a {
-      transition: opacity 0.2s ease;
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
-      opacity: 0.6;
+      color: var(--accent);
     }
 
-    /* =========================
-       GENERAL
-    ========================= */
 
-    section {
-      padding: 90px 24px;
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(172, 197, 164, 0.28),
+          transparent 30%
+        ),
+        var(--cream);
+
+      padding: 75px 25px 90px;
     }
 
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
+    .hero-container {
+      max-width: 1150px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
     }
 
     .eyebrow {
-      font-size: 0.8rem;
+      color: var(--green);
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
+      font-size: 0.78rem;
       font-weight: 700;
-      color: #776f68;
       margin-bottom: 14px;
     }
 
-    h1,
-    h2,
-    h3 {
-      line-height: 1.15;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      letter-spacing: -1px;
-      margin-bottom: 18px;
-    }
-
-    .section-intro {
-      max-width: 650px;
-      color: #66615d;
-      font-size: 1.05rem;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      padding: 70px 24px 90px;
-      background: #f2eee9;
-    }
-
-    .hero-grid {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: center;
-    }
-
     .hero h1 {
-      font-size: clamp(3rem, 7vw, 5.2rem);
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--green-dark);
+
+      font-size: clamp(3.5rem, 7vw, 6rem);
+      line-height: 0.95;
       letter-spacing: -3px;
-      margin-bottom: 24px;
+
+      margin-bottom: 28px;
     }
 
-    .hero h1 span {
-      display: block;
+    .hero h1 em {
+      color: var(--green);
+      font-weight: 400;
     }
 
     .hero-description {
+      max-width: 570px;
       font-size: 1.15rem;
-      color: #625d58;
-      max-width: 550px;
-      margin-bottom: 32px;
+      color: var(--muted);
+      margin-bottom: 34px;
     }
 
-    .buttons {
+    .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 13px;
     }
 
     .button {
       display: inline-block;
-      padding: 13px 22px;
-      border-radius: 5px;
-      font-weight: 600;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
+      padding: 14px 24px;
+      border-radius: 30px;
 
-    .button:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
+      font-weight: 650;
+      font-size: 0.94rem;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
     }
 
     .button-primary {
-      background: #292929;
-      color: #ffffff;
+      background: var(--green-dark);
+      color: white;
+      box-shadow: 0 7px 18px rgba(33, 67, 50, 0.18);
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      background: var(--green);
+      box-shadow: 0 10px 22px rgba(33, 67, 50, 0.23);
     }
 
     .button-secondary {
-      border: 1px solid #292929;
-      color: #292929;
+      border: 1px solid var(--green);
+      color: var(--green-dark);
       background: transparent;
     }
 
-    .hero-image {
-      height: 520px;
-      overflow: hidden;
-      border-radius: 8px;
+    .button-secondary:hover {
+      background: var(--green-light);
+      transform: translateY(-2px);
     }
 
-    .hero-image img {
+
+    /* HERO PHOTO */
+
+    .hero-photo-wrapper {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-photo {
+      height: 520px;
+      overflow: hidden;
+      border-radius: 170px 170px 12px 12px;
+      box-shadow: 0 22px 45px rgba(36, 58, 43, 0.15);
+      border: 8px solid rgba(255, 255, 255, 0.65);
+    }
+
+    .hero-photo img {
+      width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
     }
 
-    /* =========================
+    .photo-caption {
+      position: absolute;
+      bottom: -22px;
+      left: -25px;
+
+      background: var(--green-dark);
+      color: white;
+
+      padding: 14px 21px;
+      border-radius: 30px;
+
+      font-size: 0.85rem;
+      font-weight: 600;
+
+      box-shadow: 0 8px 20px rgba(33, 67, 50, 0.2);
+    }
+
+
+    /* =====================================================
+       INTRO STRIP
+    ===================================================== */
+
+    .intro-strip {
+      background: var(--green-dark);
+      color: white;
+      padding: 35px 25px;
+    }
+
+    .intro-strip-inner {
+      max-width: 950px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+
+      text-align: center;
+    }
+
+    .intro-item {
+      padding: 5px 15px;
+    }
+
+    .intro-item strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      margin-bottom: 4px;
+    }
+
+    .intro-item span {
+      font-size: 0.87rem;
+      color: #d9e4d9;
+    }
+
+
+    /* =====================================================
+       GENERAL SECTIONS
+    ===================================================== */
+
+    section {
+      padding: 95px 25px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.05;
+      color: var(--green-dark);
+      letter-spacing: -1.5px;
+      margin-bottom: 17px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+
+    /* =====================================================
        ABOUT
-    ========================= */
+    ===================================================== */
 
     .about {
-      background: #ffffff;
+      background: var(--white);
     }
 
     .about-grid {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
-      gap: 70px;
       align-items: center;
+      gap: 75px;
     }
 
-    .about-image {
+    .about-photo {
       height: 500px;
       overflow: hidden;
-      border-radius: 8px;
+
+      border-radius:
+        12px
+        120px
+        12px
+        120px;
+
+      box-shadow: 0 18px 40px rgba(38, 53, 43, 0.1);
     }
 
-    .about-image img {
+    .about-photo img {
       height: 100%;
       object-fit: cover;
-      object-position: center;
     }
 
     .about-text p {
+      color: var(--muted);
       margin-bottom: 18px;
-      color: #5f5a56;
-      font-size: 1.05rem;
+      font-size: 1.04rem;
     }
 
     .qualification {
-      margin-top: 28px;
-      padding: 18px 20px;
-      border-left: 3px solid #292929;
-      background: #f7f5f2;
-      font-weight: 600;
+      display: inline-block;
+      margin-top: 10px;
+
+      padding: 10px 17px;
+      border-radius: 20px;
+
+      background: var(--green-pale);
+      color: var(--green-dark);
+
+      font-weight: 650;
+      font-size: 0.9rem;
     }
 
-    /* =========================
+
+    /* =====================================================
        LESSONS
-    ========================= */
+    ===================================================== */
 
     .lessons {
-      background: #faf9f7;
+      position: relative;
+      overflow: hidden;
+      background: var(--green-pale);
     }
 
-    .lesson-grid {
-      margin-top: 45px;
+    .lesson-cards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      gap: 28px;
     }
 
     .lesson-card {
-      background: #ffffff;
-      padding: 34px;
-      border: 1px solid #e9e5e0;
-      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+
+      background: white;
+      border-radius: 20px;
+
+      padding: 40px;
+
+      box-shadow: 0 12px 30px rgba(36, 58, 43, 0.08);
+
+      border: 1px solid rgba(63, 107, 77, 0.12);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .lesson-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 38px rgba(36, 58, 43, 0.13);
+    }
+
+    .lesson-card::after {
+      content: "";
+      position: absolute;
+
+      width: 110px;
+      height: 110px;
+
+      right: -35px;
+      top: -35px;
+
+      background: var(--green-light);
+
+      border-radius: 50%;
     }
 
     .lesson-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--green-dark);
+
+      font-size: 2rem;
+      margin-bottom: 22px;
     }
 
-    .lesson-card ul {
+    .lesson-card .lesson-intro {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .lesson-list {
       list-style: none;
     }
 
-    .lesson-card li {
-      padding: 9px 0;
-      color: #625d58;
-      border-bottom: 1px solid #eeeae6;
+    .lesson-list li {
+      position: relative;
+      padding: 9px 0 9px 22px;
+
+      color: #536057;
+
+      border-bottom: 1px solid #edf0eb;
     }
 
-    .lesson-card li:last-child {
+    .lesson-list li:last-child {
       border-bottom: none;
     }
 
-    /* =========================
-       PERSONALISED
-    ========================= */
+    .lesson-list li::before {
+      content: "•";
+      position: absolute;
+      left: 3px;
+      top: 7px;
 
-    .personalised {
-      background: #292929;
-      color: #ffffff;
+      color: var(--green);
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+
+    /* =====================================================
+       FEATURE / PERSONALISATION
+    ===================================================== */
+
+    .feature {
+      position: relative;
+      overflow: hidden;
+
+      background: var(--cream);
       text-align: center;
     }
 
-    .personalised .container {
+    .feature-inner {
       max-width: 800px;
+      margin: auto;
     }
 
-    .personalised h2 {
-      margin-bottom: 20px;
+    .feature h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--green-dark);
+      font-size: clamp(2.4rem, 5vw, 3.7rem);
+      line-height: 1.05;
+      margin-bottom: 22px;
     }
 
-    .personalised p {
-      color: #dedbd8;
-      font-size: 1.1rem;
+    .feature h2 em {
+      color: var(--green);
+      font-weight: 400;
     }
 
-    /* =========================
+    .feature p {
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+
+    /* =====================================================
        PRICES
-    ========================= */
+    ===================================================== */
 
     .prices {
-      background: #ffffff;
+      background: white;
+    }
+
+    .prices-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 45px;
+    }
+
+    .prices-header h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--green-dark);
+      font-size: clamp(2.4rem, 5vw, 3.5rem);
+      margin-bottom: 15px;
+    }
+
+    .prices-header p {
+      color: var(--muted);
     }
 
     .price-grid {
-      margin-top: 45px;
+      max-width: 850px;
+      margin: auto;
+
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      max-width: 800px;
+      gap: 28px;
     }
 
     .price-card {
-      border: 1px solid #e5e0db;
-      border-radius: 8px;
-      padding: 34px;
-      background: #faf9f7;
+      position: relative;
+      text-align: center;
+
+      padding: 42px 30px;
+
+      border-radius: 20px;
+      border: 1px solid #dfe8dc;
+
+      background: var(--green-pale);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(33, 67, 50, 0.1);
+    }
+
+    .price-card.featured {
+      background: var(--green-dark);
+      color: white;
+      transform: scale(1.025);
+      box-shadow: 0 18px 35px rgba(33, 67, 50, 0.2);
+    }
+
+    .popular {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+
+      padding: 5px 11px;
+      border-radius: 20px;
+
+      background: #d9e7d3;
+      color: var(--green-dark);
+
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
     }
 
     .price {
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: -1px;
-      margin-bottom: 5px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 3.5rem;
+      line-height: 1;
+      margin-bottom: 12px;
     }
 
     .price-card h3 {
@@ -341,68 +677,151 @@
     }
 
     .price-card p {
-      color: #6a6560;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .price-card.featured p {
+      color: #dbe5dc;
     }
 
     .package-note {
+      text-align: center;
       margin-top: 28px;
-      color: #625d58;
-      font-size: 0.98rem;
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
-    /* =========================
+    .package-note a {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+
+    /* =====================================================
        CONTACT
-    ========================= */
+    ===================================================== */
 
     .contact {
-      background: #f2eee9;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          135deg,
+          #e2ecdc,
+          #f5f2e9
+        );
+
       text-align: center;
     }
 
-    .contact .container {
-      max-width: 720px;
+    .contact-inner {
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .contact h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--green-dark);
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      line-height: 1.05;
+      margin-bottom: 20px;
     }
 
     .contact p {
-      color: #625d58;
+      color: var(--muted);
+      margin-bottom: 30px;
       font-size: 1.05rem;
-      margin-bottom: 28px;
     }
 
     .email {
       display: inline-block;
+
+      color: var(--green-dark);
       font-size: 1.15rem;
-      font-weight: 600;
-      border-bottom: 1px solid #292929;
+      font-weight: 700;
+
+      border-bottom: 2px solid var(--green);
       padding-bottom: 3px;
+
+      transition: color 0.2s ease;
     }
 
-    /* =========================
+    .email:hover {
+      color: var(--green);
+    }
+
+
+    /* =====================================================
        FOOTER
-    ========================= */
+    ===================================================== */
 
     footer {
-      background: #ffffff;
-      border-top: 1px solid #ece8e3;
-      padding: 28px 24px;
+      background: var(--green-dark);
+      color: #d9e4d9;
+
       text-align: center;
-      color: #77716c;
-      font-size: 0.9rem;
+      padding: 28px 20px;
+
+      font-size: 0.85rem;
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
 
-    @media (max-width: 800px) {
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 850px) {
 
       .nav {
-        padding: 16px 20px;
+        padding: 15px 18px;
       }
 
       .nav-links {
-        gap: 14px;
-        font-size: 0.85rem;
+        gap: 15px;
+        font-size: 0.8rem;
+      }
+
+      .hero-container,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-container {
+        gap: 55px;
+      }
+
+      .hero-photo {
+        height: 430px;
+      }
+
+      .about-photo {
+        height: 400px;
+      }
+
+      .lesson-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .price-grid {
+        max-width: 650px;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .nav {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 16px;
       }
 
       section {
@@ -410,84 +829,95 @@
       }
 
       .hero {
-        padding: 55px 20px 70px;
-      }
-
-      .hero-grid,
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        padding: 60px 20px 80px;
       }
 
       .hero h1 {
-        font-size: clamp(3rem, 14vw, 4.5rem);
-      }
-
-      .hero-image {
-        height: 380px;
-      }
-
-      .about-image {
-        height: 380px;
-      }
-
-      .lesson-grid,
-      .price-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 520px) {
-
-      .logo {
-        font-size: 1.05rem;
-      }
-
-      .nav-links {
-        gap: 10px;
-        font-size: 0.78rem;
-      }
-
-      .hero h1 {
+        font-size: clamp(3.2rem, 17vw, 4.7rem);
         letter-spacing: -2px;
       }
 
       .hero-description {
-        font-size: 1.05rem;
+        font-size: 1.02rem;
       }
 
-      .hero-image,
-      .about-image {
-        height: 320px;
-      }
-
-      .lesson-card,
-      .price-card {
-        padding: 26px;
+      .hero-buttons {
+        flex-direction: column;
       }
 
       .button {
         width: 100%;
         text-align: center;
       }
+
+      .hero-photo {
+        height: 350px;
+        border-radius: 120px 120px 10px 10px;
+      }
+
+      .photo-caption {
+        left: 12px;
+        bottom: -18px;
+        font-size: 0.78rem;
+      }
+
+      .intro-strip-inner {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .about-grid {
+        gap: 40px;
+      }
+
+      .about-photo {
+        height: 340px;
+        border-radius: 10px 90px 10px 90px;
+      }
+
+      .lesson-card {
+        padding: 30px 25px;
+      }
+
+      .lesson-card h3 {
+        font-size: 1.8rem;
+      }
+
+      .price-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      .leaf-decoration {
+        display: none;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- =========================
+
+  <!-- =====================================================
        NAVIGATION
-  ========================= -->
+  ===================================================== -->
 
   <header>
+
     <nav class="nav">
 
       <a href="#top" class="logo">
-        Ailin Harms
+        Ailin <span>Harms</span>
       </a>
 
       <ul class="nav-links">
+
         <li>
           <a href="#about">About</a>
         </li>
@@ -503,52 +933,65 @@
         <li>
           <a href="#contact">Contact</a>
         </li>
+
       </ul>
 
     </nav>
+
   </header>
 
 
-  <!-- =========================
+
+  <!-- =====================================================
        HERO
-  ========================= -->
+  ===================================================== -->
 
   <main id="top">
 
     <section class="hero">
 
-      <div class="hero-grid">
+      <!-- CSS botanical decoration -->
+
+      <div class="leaf-decoration">
+        <div class="leaf leaf-one"></div>
+        <div class="leaf leaf-two"></div>
+        <div class="leaf leaf-three"></div>
+      </div>
+
+
+      <div class="hero-container">
+
 
         <div class="hero-content">
 
           <div class="eyebrow">
-            Language Teacher
+            English & Spanish · CELTA Qualified
           </div>
 
           <h1>
             Learn with
-            <span>Ailin.</span>
+            <em>Ailin.</em>
           </h1>
 
           <p class="hero-description">
-            Personalised English and Spanish lessons designed around
+            Personalised language lessons designed around
             your goals, your interests and your way of learning.
           </p>
 
-          <div class="buttons">
-
-            <a
-              href="mailto:ailin_harms@outlook.com"
-              class="button button-primary"
-            >
-              Get in touch
-            </a>
+          <div class="hero-buttons">
 
             <a
               href="#lessons"
+              class="button button-primary"
+            >
+              Explore my lessons
+            </a>
+
+            <a
+              href="mailto:ailin_harms@outlook.com"
               class="button button-secondary"
             >
-              Explore lessons
+              Get in touch
             </a>
 
           </div>
@@ -556,15 +999,23 @@
         </div>
 
 
-        <!-- REAL PHOTO — NO SVG -->
+        <!-- REAL UNSPLASH PHOTO -->
 
-        <div class="hero-image">
+        <div class="hero-photo-wrapper">
 
-          <img
-            src="https://images.unsplash.com/photo-1768219565623-501f93ae384b?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1600"
-            alt="Laptop, notebook and coffee on a desk"
-            loading="eager"
-          >
+          <div class="hero-photo">
+
+            <img
+              src="https://images.unsplash.com/photo-1768219565623-501f93ae384b?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1600"
+              alt="Laptop, notebook and coffee on a desk"
+              loading="eager"
+            >
+
+          </div>
+
+          <div class="photo-caption">
+            Learn · Practise · Grow
+          </div>
 
         </div>
 
@@ -573,21 +1024,69 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
+         QUICK INTRO
+    ===================================================== -->
+
+    <section class="intro-strip">
+
+      <div class="intro-strip-inner">
+
+        <div class="intro-item">
+
+          <strong>English</strong>
+
+          <span>
+            Everyday communication & confidence
+          </span>
+
+        </div>
+
+
+        <div class="intro-item">
+
+          <strong>Spanish</strong>
+
+          <span>
+            Conversation & travel
+          </span>
+
+        </div>
+
+
+        <div class="intro-item">
+
+          <strong>Personalised</strong>
+
+          <span>
+            Lessons focused on you
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
          ABOUT
-    ========================= -->
+    ===================================================== -->
 
     <section class="about" id="about">
 
       <div class="container about-grid">
 
-        <!-- REAL PHOTO — NO SVG -->
 
-        <div class="about-image">
+        <!-- REAL UNSPLASH PHOTO -->
+
+        <div class="about-photo">
 
           <img
             src="https://images.unsplash.com/photo-1724166595400-fdfcdb29685e?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1600"
-            alt="A stack of books on a desk"
+            alt="A stack of books sitting on a desk"
             loading="lazy"
           >
 
@@ -600,25 +1099,30 @@
             About me
           </div>
 
-          <h2>
-            Hello, I'm Ailin.
-          </h2>
+          <div class="section-heading">
+
+            <h2>
+              Language learning should feel personal.
+            </h2>
+
+          </div>
 
           <p>
-            I'm a CELTA-qualified language teacher based in Liverpool
-            with experience helping students develop their confidence
-            and communication skills.
+            I'm Ailin, a CELTA-qualified language teacher based
+            in Liverpool with experience helping students build
+            their confidence and communication skills.
           </p>
 
           <p>
-            I teach both English and Spanish, with lessons adapted to
-            each student's needs, interests and level.
+            I teach both English and Spanish, adapting lessons
+            to each student's needs, interests and level.
           </p>
 
           <p>
-            Whether you want to improve your everyday communication,
-            practise speaking or develop your language skills, we can
-            build the lessons around you.
+            Whether you want to practise speaking, improve your
+            everyday communication or simply become more
+            comfortable using a language, lessons can be
+            shaped around you.
           </p>
 
           <div class="qualification">
@@ -632,30 +1136,43 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          LESSONS
-    ========================= -->
+    ===================================================== -->
 
     <section class="lessons" id="lessons">
 
+      <div class="leaf-decoration">
+        <div class="leaf leaf-one"></div>
+        <div class="leaf leaf-two"></div>
+        <div class="leaf leaf-three"></div>
+      </div>
+
+
       <div class="container">
 
-        <div class="eyebrow">
-          What I teach
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            Classes
+          </div>
+
+          <h2>
+            Find the right lesson for you.
+          </h2>
+
+          <p>
+            Every lesson is personalised and focused on what
+            you want to learn and practise.
+          </p>
+
         </div>
 
-        <h2>
-          Lessons designed for you.
-        </h2>
 
-        <p class="section-intro">
-          Every lesson is personalised and focused on you.
-          We can adapt the content and pace to what you want
-          to achieve.
-        </p>
+        <div class="lesson-cards">
 
-
-        <div class="lesson-grid">
 
           <!-- ENGLISH -->
 
@@ -665,7 +1182,12 @@
               English
             </h3>
 
-            <ul>
+            <p class="lesson-intro">
+              Build confidence and develop your English
+              through practical, personalised lessons.
+            </p>
+
+            <ul class="lesson-list">
 
               <li>
                 General English
@@ -696,7 +1218,12 @@
               Spanish
             </h3>
 
-            <ul>
+            <p class="lesson-intro">
+              Learn and practise Spanish in a relaxed,
+              personalised environment.
+            </p>
+
+            <ul class="lesson-list">
 
               <li>
                 Conversation classes
@@ -718,6 +1245,7 @@
 
           </article>
 
+
         </div>
 
       </div>
@@ -725,25 +1253,35 @@
     </section>
 
 
-    <!-- =========================
-         PERSONALISED MESSAGE
-    ========================= -->
 
-    <section class="personalised">
+    <!-- =====================================================
+         PERSONALISATION
+    ===================================================== -->
 
-      <div class="container">
+    <section class="feature">
+
+      <div class="leaf-decoration">
+        <div class="leaf leaf-one"></div>
+        <div class="leaf leaf-two"></div>
+      </div>
+
+
+      <div class="feature-inner">
 
         <div class="eyebrow">
           Your lessons, your way
         </div>
 
         <h2>
-          Every lesson is personalised and focused on you.
+          Every lesson is
+          <em>personalised</em>
+          and focused on you.
         </h2>
 
         <p>
-          Tell me what you would like to work on and we can create
-          lessons that fit your needs, interests and goals.
+          Tell me what you would like to work on and we can
+          shape the lessons around your needs, interests
+          and goals.
         </p>
 
       </div>
@@ -751,30 +1289,37 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          PRICES
-    ========================= -->
+    ===================================================== -->
 
     <section class="prices" id="prices">
 
       <div class="container">
 
-        <div class="eyebrow">
-          Prices
+
+        <div class="prices-header">
+
+          <div class="eyebrow">
+            Prices
+          </div>
+
+          <h2>
+            Simple & flexible.
+          </h2>
+
+          <p>
+            Choose a single lesson or save with a five-hour package.
+          </p>
+
         </div>
-
-        <h2>
-          Simple, flexible pricing.
-        </h2>
-
-        <p class="section-intro">
-          Choose a single lesson or a five-hour package.
-        </p>
 
 
         <div class="price-grid">
 
-          <!-- ONE HOUR -->
+
+          <!-- SINGLE LESSON -->
 
           <div class="price-card">
 
@@ -787,15 +1332,19 @@
             </h3>
 
             <p>
-              A personalised one-hour lesson.
+              One personalised lesson.
             </p>
 
           </div>
 
 
-          <!-- FIVE HOURS -->
+          <!-- PACKAGE -->
 
-          <div class="price-card">
+          <div class="price-card featured">
+
+            <div class="popular">
+              Best value
+            </div>
 
             <div class="price">
               £100
@@ -811,11 +1360,15 @@
 
           </div>
 
+
         </div>
 
 
         <p class="package-note">
-          Need more hours? Contact me for special package prices.
+          Need more hours?
+          <a href="mailto:ailin_harms@outlook.com">
+            Contact me for special package prices.
+          </a>
         </p>
 
       </div>
@@ -823,25 +1376,26 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          CONTACT
-    ========================= -->
+    ===================================================== -->
 
     <section class="contact" id="contact">
 
-      <div class="container">
+      <div class="contact-inner">
 
         <div class="eyebrow">
           Get in touch
         </div>
 
         <h2>
-          Let's talk about your lessons.
+          Ready to start learning?
         </h2>
 
         <p>
-          If you have any questions or would like to discuss
-          what you're looking for, feel free to get in touch.
+          Have a question or want to discuss what you're
+          looking for? I'd love to hear from you.
         </p>
 
         <a
@@ -858,17 +1412,19 @@
   </main>
 
 
-  <!-- =========================
+
+  <!-- =====================================================
        FOOTER
-  ========================= -->
+  ===================================================== -->
 
   <footer>
 
     <p>
-      © 2026 Ailin Harms. All rights reserved.
+      © 2026 Ailin Harms · English & Spanish Teacher
     </p>
 
   </footer>
+
 
 </body>
 </html>
